@@ -30,7 +30,7 @@
                 {{ content }}
             </div>
 
-            {% include 'partials/share.html.twig' with {'base_url':page.url, 'pagination':page.collection.params.pagination} %}
+            {% include 'partials/share.html.twig' %}
             {% if config.plugins.jscomments.enabled %}{{ jscomments()|raw }}{% endif %}
 
         </article>
