@@ -1,44 +1,42 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
- <div class="grid grid-centered">
-      <div class="grid-cell">
+<div class="grid grid-centered">
+    <div class="grid-cell">
+
         {% include 'partials/navigation.html.twig' %}
- <article class="article {% if theme_config.scrollappear_enabled %}scrollappear{% endif %}">
-          <header class="article-header">
-            <h1>{{ page.title }}</h1>
-            <p>{{ page.header.headline }}</p>
-            <div class="article-list-footer">
-              <span class="article-list-date">
-                {{ page.date|date('d-m-Y') }}
-              </span>
-              <span class="article-list-divider">-</span>
-              <span class="article-list-minutes">
-               {{ page.content|readingtime }}
-              </span>
 
-              {% if article.taxonomy.tag %}
-              <span class="article-list-divider">-</span>
-              <div class="article-list-tags">
-                {% for tag in page.taxonomy.tag %}
-                  <a href="{{base_url}}/tag:{{tag}}">{{ tag }}</a>
-                {% endfor %}
-              </div>
-              {% endif %}
+        <article class="article{% if theme_config.scrollappear_enabled %} scrollappear{% endif %}">
+            <header class="article-header">
+                <h1>{{ page.title }}</h1>
+                <p>{{ page.header.headline }}</p>
+                <div class="article-list-footer">
+                    <span class="article-list-date">{{ page.date|date('d-m-Y') }}</span>
+                    <span class="article-list-divider">-</span>
+                    <span class="article-list-minutes">{{ page.content|readingtime }}</span>
+
+                    {% if article.taxonomy.tag %}
+                    <span class="article-list-divider">-</span>
+                    <div class="article-list-tags">
+                        {% for tag in page.taxonomy.tag %}
+                        <a href="{{base_url}}/tag:{{tag}}">{{ tag }}</a>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </header>
+
+            <div class="article-content">
+                {{ content }}
             </div>
-          </header>
 
-          <div class="article-content">
-            {{ content }}
-          </div>
+            {% include 'partials/share.html.twig' with {'base_url':page.url, 'pagination':page.collection.params.pagination} %}
+            {% if config.plugins.jscomments.enabled %}{{ jscomments()|raw }}{% endif %}
 
-          {% include 'partials/share.html.twig' with {'base_url':page.url, 'pagination':page.collection.params.pagination} %}
-
-          {% if config.plugins.jscomments.enabled %}
-          {{ jscomments()|raw }}
-          {% endif %}
         </article>
+
         {% include 'partials/footer.html.twig' %}
-      </div>
+
     </div>
-    {% endblock %}
+</div>
+{% endblock %}
