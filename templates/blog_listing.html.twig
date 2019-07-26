@@ -19,13 +19,16 @@
                         <span class="article-list-minutes">
                         {{ article.content|readingtime }}
                         </span>
-                        <span class="article-list-divider">-</span>
                         </a>
+
+                        {% if article.taxonomy.tag %}
+                        <span class="article-list-divider">-</span>
                         <div class="article-list-tags">
                             {% for tag in article.taxonomy.tag %}
-                        <a href="{{ base_url }}{{config.plugins.taxonomylist.route }}/{{ 'tag' }}{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>
-                        {% endfor %}
+                            <a href="{{ base_url }}{{config.plugins.taxonomylist.route }}/{{ 'tag' }}{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>
+                            {% endfor %}
                         </div>
+                        {% endif %}
                     </div>
                     {% if theme_config.summary_enabled == "on" %}
                     <a href="{{ article.url }}" title="{{article.title}}">
