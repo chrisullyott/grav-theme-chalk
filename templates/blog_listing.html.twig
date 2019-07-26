@@ -9,8 +9,9 @@
                {% for article in page.collection() %}
                <li class="article-list-item {% if theme_config.scrollappear_enabled %}scrollappear{% endif %}">
                    <a href="{{ article.url }}" title="{{article.title}}">
-                   <h4>{{article.title}}</h4>
-                   <h5>{{article.header.headline}}</h5>
+                     <h4>{{article.title}}</h4>
+                     <h5>{{article.header.headline}}</h5>
+                   </a>
                    <div class="article-list-footer">
                         <span class="article-list-date">
                         {{article.date|date('d-m-Y') }}
@@ -19,7 +20,6 @@
                         <span class="article-list-minutes">
                         {{ article.content|readingtime }}
                         </span>
-                        </a>
 
                         {% if article.taxonomy.tag %}
                         <span class="article-list-divider">-</span>
