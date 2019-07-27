@@ -23,6 +23,10 @@
                         {% endfor %}
                     </div>
                     {% endif %}
+
+                    {% if page.header.header_image %}
+                    <p><img src="{{ page.media.images[page.header.header_image].cache.url() }}" alt="header image"></p>
+                    {% endif %}
                 </div>
             </header>
 
