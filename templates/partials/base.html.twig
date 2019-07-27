@@ -1,4 +1,5 @@
 {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+{% set date_format = "j F Y" %}
 <!DOCTYPE html>
 <html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
     <head>
