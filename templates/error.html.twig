@@ -1,8 +1,21 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-    <div class="lead text-center">
-        <h1>Error!</h1>
-        {{ page.content }}
+<div class="grid grid-centered">
+    <div class="grid-cell">
+
+        {% include 'partials/navigation.html.twig' %}
+
+        <article class="article{% if theme_config.scrollappear_enabled %} scrollappear{% endif %}">
+            <h1>{{ page.title }}</h1>
+            <br>
+            <div class="article-content">
+                {{ content }}
+            </div>
+        </article>
+
+        {% include 'partials/footer.html.twig' %}
+
     </div>
+</div>
 {% endblock %}
