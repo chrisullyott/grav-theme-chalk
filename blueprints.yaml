@@ -43,6 +43,15 @@ form:
         options:
           lato: Lato
           cormorant: Cormorant
+    scrollappear:
+        type: toggle
+        label: ScrollAppear
+        default: 1
+        options:
+            1: On
+            0: Off
+        validate:
+            type: bool
     social_section:
         type: section
         title: Social Links

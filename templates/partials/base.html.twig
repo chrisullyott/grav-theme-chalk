@@ -52,7 +52,7 @@
         {% do assets.addJs('//cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js', 107) %}
         {% do assets.addJs('theme://js/vendor.js', 103) %}
         {% do assets.addJs('theme://js/webfont.js', 102) %}
-        {% if theme_config.scrollappear_enabled %}{% do assets.addJs('theme://js/scrollappear.js', 103) %}{% endif %}
+        {% if theme_config.scrollappear %}{% do assets.addJs('theme://js/scrollappear.js', 103) %}{% endif %}
         {% do assets.addJs('https://cdnjs.cloudflare.com/ajax/libs/fluidbox/2.0.5/js/jquery.fluidbox.min.js', 102) %}
         {% do assets.addJs('theme://js/application.js', 100) %}
     {% endblock %}
