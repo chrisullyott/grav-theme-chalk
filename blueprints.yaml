@@ -29,13 +29,6 @@ form:
         options:
           dark: Dark Theme
           light: Light Theme
-    summary_enabled:
-        type: toggle
-        label: Articles summary
-        default: off
-        options:
-          on: On
-          off: Off
     header_font:
         type: toggle
         label: Header font
@@ -43,6 +36,15 @@ form:
         options:
           lato: Lato
           cormorant: Cormorant
+    post_summary:
+        type: toggle
+        label: Post summaries
+        default: 1
+        options:
+            1: On
+            0: Off
+        validate:
+            type: bool
     scrollappear:
         type: toggle
         label: ScrollAppear
