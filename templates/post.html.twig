@@ -15,11 +15,11 @@
                     <span class="article-list-divider">-</span>
                     <span class="article-list-minutes">{{ page.content|readingtime }}</span>
 
-                    {% if article.taxonomy.tag %}
+                    {% if page.taxonomy.category %}
                     <span class="article-list-divider">-</span>
                     <div class="article-list-tags">
-                        {% for tag in page.taxonomy.tag %}
-                        <a href="{{ base_url }}/tag:{{ tag }}">{{ tag }}</a>
+                        {% for category in page.taxonomy.category %}
+                        <a href="{{ base_url }}/category:{{ category }}">{{ category }}</a>
                         {% endfor %}
                     </div>
                     {% endif %}
