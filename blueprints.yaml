@@ -27,18 +27,18 @@ form:
         label: Blog Theme
         default: light
         options:
-          dark: Dark Theme
-          light: Light Theme
+          dark: Dark
+          light: Light
     header_font:
         type: toggle
-        label: Header font
+        label: Header Font
         default: cormorant
         options:
           lato: Lato
           cormorant: Cormorant
     post_summary:
         type: toggle
-        label: Post summaries
+        label: Post Summaries
         default: 1
         options:
             1: On
