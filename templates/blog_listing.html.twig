@@ -8,13 +8,13 @@
                <ul class="article-list">
                {% for article in page.collection() %}
                <li class="article-list-item {% if theme_config.scrollappear_enabled %}scrollappear{% endif %}">
-                   <a href="{{ article.url }}" title="{{article.title}}">
-                     <h4>{{article.title}}</h4>
-                     <h5>{{article.header.headline}}</h5>
+                   <a href="{{ article.url }}" title="{{ article.title }}">
+                     <h4>{{ article.title }}</h4>
+                     <h5>{{ article.header.headline }}</h5>
                    </a>
                    <div class="article-list-footer">
                         <span class="article-list-date">
-                        {{article.date|date(date_format) }}
+                        {{ article.date|date(date_format) }}
                         </span>
                         <span class="article-list-divider">-</span>
                         <span class="article-list-minutes">
@@ -25,14 +25,14 @@
                         <span class="article-list-divider">-</span>
                         <div class="article-list-tags">
                             {% for tag in article.taxonomy.tag %}
-                            <a href="{{ base_url }}{{config.plugins.taxonomylist.route }}/{{ 'tag' }}{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>
+                            <a href="{{ base_url }}{{ config.plugins.taxonomylist.route }}/{{ 'tag' }}{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>
                             {% endfor %}
                         </div>
                         {% endif %}
                     </div>
                     {% if theme_config.summary_enabled == "on" %}
-                    <a href="{{ article.url }}" title="{{article.title}}">
-                      <p>{{article.summary}}</p>
+                    <a href="{{ article.url }}" title="{{ article.title }}">
+                      <p>{{ article.summary }}</p>
                     </a>
                     {% endif %}
                </li>
