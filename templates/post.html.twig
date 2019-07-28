@@ -1,4 +1,5 @@
 {% extends 'partials/base.html.twig' %}
+{% set table_of_contents = toc(page.content) %}
 
 {% block content %}
 <div class="grid grid-centered">
@@ -34,6 +35,10 @@
             </header>
 
             <div class="article-content">
+                {% if table_of_contents is not empty %}
+                <div class="page-toc"><h4>Contents</h4>{{ table_of_contents }}</div>
+                {% endif %}
+
                 {{ content }}
             </div>
 
