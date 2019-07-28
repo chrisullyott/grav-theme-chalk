@@ -1,7 +1,9 @@
  <footer class="footer {% if theme_config.scrollappear %}scrollappear{% endif %}">
 
-   <ul class="header-links" style="text-align:center; float: none!important;">
+  <p>Copyright &copy; {{ 'now'|date('Y') }} {{ site.title }}&nbsp;&nbsp;|&nbsp;&nbsp;With GravCMS</p>
 
+   {#
+   <ul class="header-links" style="text-align:center; float: none!important;">
 
     {% if theme_config.about_enabled == true %}
       <li>
@@ -259,4 +261,6 @@
       </li>
     {% endif %}
   </ul>
+  #}
+
 </footer>
