@@ -19,7 +19,7 @@
                     <span class="article-list-divider">-</span>
                     <div class="article-list-tags">
                         {% for category in page.taxonomy.category %}
-                        <a href="{{ base_url }}/category:{{ category }}">{{ category }}</a>
+                        <a href="{{ config.plugins.taxonomylist.route }}/{{ 'category' }}{{ config.system.param_sep }}{{ category }}">{{ category }}</a>
                         {% endfor %}
                     </div>
                     {% endif %}
