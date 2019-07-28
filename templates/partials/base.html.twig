@@ -29,6 +29,10 @@
 
         {{ assets.css() }}
 
+        <style type="text/css">
+        .header-links li a svg {position:relative;top:1px;}
+        </style>
+
     {% endblock head %}
     </head>
     <body{% if page.header.body_classes %} class="{{ page.header.body_classes }}"{% endif %}>
