@@ -12,8 +12,11 @@
                 <p>{{ page.header.headline }}</p>
                 <div class="article-list-footer">
                     <span class="article-list-date">{{ page.date|date(date_format) }}</span>
+
+                    {% if page.content|readingtime >= 2 %}
                     <span class="article-list-divider">-</span>
-                    <span class="article-list-minutes">{{ page.content|readingtime }}</span>
+                    <span class="article-list-minutes">{{ page.content|readingtime }} Minute Read</span>
+                    {% endif %}
 
                     {% if page.taxonomy.category %}
                     <span class="article-list-divider">-</span>
