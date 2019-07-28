@@ -30,7 +30,31 @@
         {{ assets.css() }}
 
         <style type="text/css">
-        .header-links li a svg {position:relative;top:1px;}
+        .header-links li a svg {
+            position:relative;
+            top:1px;
+        }
+
+        .article-content h2 {
+            margin-top: 40px;
+        }
+
+        .article-content .page-toc {
+            border-bottom: 1px solid #ebeaea;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+
+        .page-toc ul {
+            list-style: none;
+            padding-left: 4px;
+            margin:0;
+        }
+
+        .page-toc ul.menu_level_1 {
+            padding-left: 1em;
+            list-style-type: disc;
+        }
         </style>
 
     {% endblock head %}
