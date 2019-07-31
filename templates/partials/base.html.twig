@@ -4,12 +4,6 @@
 <html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
     <head>
     {% block head %}
-        <meta charset="utf-8" />
-        <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
-
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
         {% include 'partials/metadata.html.twig' %}
 
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
