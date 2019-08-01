@@ -1,6 +1,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="y0CSPYezj_jwEepkRsRlBJZHiR__xZSnUCOl_8DWXE4">
 
 <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
 
@@ -8,17 +9,16 @@
 <meta {% if meta.name %}name="{{ meta.name }}" {% endif %}{% if meta.http_equiv %}http-equiv="{{ meta.http_equiv }}" {% endif %}{% if meta.charset %}charset="{{ meta.charset }}" {% endif %}{% if meta.property %}property="{{ meta.property }}" {% endif %}{% if meta.content %}content="{{ meta.content }}" {% endif %}/>
 {% endfor %}
 
-{% if not page.home() %}
-    <meta property="og:title" content="{{ page.title }}" />
-    <meta property="og:author" content="Chris Ullyott" />
-    <meta property="og:type" content="article" />
-    <meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="{{ site.title }}" />
+<meta property="og:author" content="{{ site.title }}" />
+<meta property="og:title" content="{% if page.home() %}{{ site.title }}{% else %}{{ page.title }}{% endif %}" />
+<meta property="og:type" content="{% if page.home() %}website{% else %}article{% endif %}" />
+<meta property="og:locale" content="en_US" />
 
-    {% if page.header.header_image %}
-    {% set og_image_width = page.media[page.header.header_image].width %}
-    {% set og_image_height = page.media[page.header.header_image].height %}
-    <meta property="og:image" content="{{ base_url_absolute }}{{ page.media.images[page.header.header_image].cache.url() }}" />
-    <meta property="og:image:width" content="{{ og_image_width }}" />
-    <meta property="og:image:height" content="{{ og_image_height }}" />
-    {% endif %}
+{% if page.header.header_image %}
+{% set og_image_width = page.media[page.header.header_image].width %}
+{% set og_image_height = page.media[page.header.header_image].height %}
+<meta property="og:image" content="{{ base_url_absolute }}{{ page.media.images[page.header.header_image].cache.url() }}" />
+<meta property="og:image:width" content="{{ og_image_width }}" />
+<meta property="og:image:height" content="{{ og_image_height }}" />
 {% endif %}
