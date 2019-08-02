@@ -10,10 +10,14 @@
 {% endfor %}
 
 <meta property="og:site_name" content="{{ site.title }}" />
-<meta property="og:author" content="{{ site.title }}" />
 <meta property="og:title" content="{% if page.home() %}{{ site.title }}{% else %}{{ page.title }}{% endif %}" />
 <meta property="og:type" content="{% if page.home() %}website{% else %}article{% endif %}" />
 <meta property="og:locale" content="en_US" />
+
+{% if not page.home() %}
+<meta property="og:article:author" content="{{ site.title }}" />
+<meta property="og:article:published_time" content="{{ page.date|date('c') }}" />
+{% endif %}
 
 {% if page.header.header_image %}
 {% set og_image_width = page.media[page.header.header_image].width %}
