@@ -9,9 +9,10 @@
 <meta {% if meta.name %}name="{{ meta.name }}" {% endif %}{% if meta.http_equiv %}http-equiv="{{ meta.http_equiv }}" {% endif %}{% if meta.charset %}charset="{{ meta.charset }}" {% endif %}{% if meta.property %}property="{{ meta.property }}" {% endif %}{% if meta.content %}content="{{ meta.content }}" {% endif %}/>
 {% endfor %}
 
+<meta property="og:type" content="{% if page.home() %}website{% else %}article{% endif %}" />
+<meta property="og:url" content="{{ base_url_absolute }}{{ page.url }}" />
 <meta property="og:site_name" content="{{ site.title }}" />
 <meta property="og:title" content="{% if page.home() %}{{ site.title }}{% else %}{{ page.title }}{% endif %}" />
-<meta property="og:type" content="{% if page.home() %}website{% else %}article{% endif %}" />
 <meta property="og:locale" content="en_US" />
 
 {% if not page.home() %}
