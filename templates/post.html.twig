@@ -40,6 +40,9 @@
                 {% endif %}
 
                 {{ content }}
+
+                <br>
+                <p><em>Updated {{ page.modified()|date('M j, Y') }}.</em></p>
             </div>
 
             {% include 'partials/share.html.twig' %}
