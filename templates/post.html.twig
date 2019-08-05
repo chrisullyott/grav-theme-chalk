@@ -36,7 +36,7 @@
                     </div>
 
                     {% if page.header.header_image %}
-                        <p><img src="{{ page.media.images[page.header.header_image].cache.url() }}" alt="{{ page.media.images[page.header.header_image].metadata.alt_text }}"></p>
+                        <p><img src="{{ page.media[page.header.header_image].resize(1400).cache.url() }}" alt="{{ page.media[page.header.header_image].metadata.alt_text }}"></p>
                     {% endif %}
                 </div>
             </header>
