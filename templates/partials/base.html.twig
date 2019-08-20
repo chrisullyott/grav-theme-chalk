@@ -22,9 +22,9 @@
             <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Lato" rel="stylesheet">
 
             {% if theme_config.blog_theme == "light" %}
-                {% do assets.addCss('theme://css-compiled/light.css', 98) %}
+                {% do assets.addCss('theme://css/light.css', 98) %}
             {% else %}
-                {% do assets.addCss('theme://css-compiled/dark.css', 98) %}
+                {% do assets.addCss('theme://css/dark.css', 98) %}
             {% endif %}
             {% do assets.addCss('https://cdnjs.cloudflare.com/ajax/libs/fluidbox/2.0.5/css/fluidbox.min.css', 98) %}
         {% endblock %}
