@@ -22,4 +22,4 @@ Templates available:
 - Post template: `post.html.twig`, the individual blog posts.
 - Tags template: `tags.html.twig`, to display a list of tags gathered across the posts.
 
-Every page added will be added to the navigation, but keep in mind that the theme is designed for websites with only a few pages (eg: Blog, About, Tags).
+Every page will be added to the navigation, but keep in mind that the theme is designed for websites with only a few pages (Blog, About, Tags).
